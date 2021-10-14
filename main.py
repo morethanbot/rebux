@@ -1,3 +1,4 @@
+import data
 from data.provider.pg_provider import PGProvider
 
 
@@ -21,3 +22,5 @@ db.execute('''CREATE TABLE "circulation" (
 );''')
 
 db.commit()
+
+data.circulation_repository
