@@ -26,3 +26,4 @@ class PGProvider(DBProvider):
         if self.__connection__ is not None:
             self.__connection__.close()
             self.__cursor__.close()
+
