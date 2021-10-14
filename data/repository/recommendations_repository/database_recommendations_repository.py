@@ -22,7 +22,11 @@ class DatabaseRecommendationsRepository(RecommendationsRepository):
             '''SELECT * FROM recommendations WHERE user_id = %s ORDER BY confidence DESC LIMIT %s''',
             (user.user_id, count)
         )
-        results_list: List[Recommendation] = []
+        recommendations: List[Recommendation] = []
         for row in data.database_provider.get_cursor():
-            results_list.append(Recommendation(row[0], row[1], row[2]))
-        return results_list
+            user = data.user_repository.get_user(row[0])
+            book = data.book_repository.get_book(row[1])
+            confidence = row[2]
+            recommendation = Recommendation(user=user, book=book, confidence=confidence)
+            recommendations.append(recommendation)
+        return recommendations

@@ -3,7 +3,7 @@ from model.user import User
 
 
 class DummyUserRepository(UserRepository):
-    def get_user(self, user_id: str):
+    def get_user(self, user_id: int):
         return User(user_id=user_id)
 
     def add_user(self, user: User):

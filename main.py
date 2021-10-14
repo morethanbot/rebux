@@ -1,5 +1,9 @@
 import data
-from data.provider.pg_provider import PGProvider
+from model.connection import Connection
 
 
-print(data.circulation_repository.get_user_books(data.user_repository.get_user(44894)))
+def add_connection(from_id, to_id, weight):
+    book_from = data.book_repository.get_book(book_id=from_id)
+    book_to = data.book_repository.get_book(book_id=to_id)
+    connection = Connection(book_from=book_from, book_to=book_to, weight=weight)
+    data.connections_repository.update_connection(connection=connection)

@@ -5,13 +5,13 @@ from model.connection import Connection
 from model.recommendation import Recommendation
 
 
-def add_entry(user_id: str, book_id: str):
+def add_entry(user_id: int, book_id: int):
     user = user_repository.get_user(user_id=user_id)
     book = book_repository.get_book(book_id=book_id)
     circulation_repository.add_user_book(user=user, book=book)
 
     user_books = circulation_repository.get_user_books(user=user)
-    user_book_ids: List[str] = []
+    user_book_ids: List[int] = []
     for connected_book in user_books:
         user_book_ids.append(connected_book.book_id)
         if connected_book.book_id != book.book_id:

@@ -1,3 +1,5 @@
+from sqlite3 import Connection
+
 from data.provider.database_provider import DBProvider
 import psycopg2
 
@@ -16,7 +18,7 @@ class PGProvider(DBProvider):
     def execute(self, sql, *args):
         self.__cursor__.execute(sql, *args)
 
-    def get_cursor(self):
+    def get_cursor(self) -> Connection:
         return self.__cursor__
 
     def commit(self):
