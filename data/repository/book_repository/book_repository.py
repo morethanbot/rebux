@@ -8,7 +8,7 @@ class BookRepository(ABC):
         self.books = {}
 
     @abstractmethod
-    def get_book(self, book_id: int):
+    def get_book(self, book_id: int) -> Book:
         pass
 
     @abstractmethod

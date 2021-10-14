@@ -1,4 +1,5 @@
 from abc import *
+from typing import List
 
 from model.book import Book
 from model.connection import Connection
@@ -6,9 +7,9 @@ from model.connection import Connection
 
 class ConnectionsRepository(ABC):
     @abstractmethod
-    def add_connection(self, connection: Connection):
+    def update_connection(self, connection: Connection):
         pass
 
     @abstractmethod
-    def get_connections(self, book_from: Book):
+    def get_connections(self, book_from: Book) -> List[Connection]:
         pass
