@@ -3,8 +3,8 @@ from model.user import User
 
 
 class DummyUserRepository(UserRepository):
-    def get_user(self, user_id: int):
-        return self.users[user_id]
+    def get_user(self, user_id: str):
+        return User(user_id=user_id)
 
     def add_user(self, user: User):
-        self.users[user.user_id] = user
+        pass
