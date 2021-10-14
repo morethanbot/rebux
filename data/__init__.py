@@ -6,6 +6,7 @@ from data.repository.connections_repository.dummy_connections_repository import 
 from data.repository.recommendations_repository.dummy_recommendations_repository import DummyRecommendationsRepository
 from data.repository.user_repository.dummy_user_repository import DummyUserRepository
 
+
 database_provider = PGProvider()
 database_provider.connect(
     host="rc1b-3t64ginmv5ottmzv.mdb.yandexcloud.net",
