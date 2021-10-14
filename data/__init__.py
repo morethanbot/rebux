@@ -1,5 +1,5 @@
 from data.provider.pg_provider import PGProvider
-from data.repository.book_repository.dummy_book_repository import DummyBookRepository
+from data.repository.book_repository.database_book_repository import DatabaseBookRepository
 from data.repository.circulation_repository.database_circulation_repository import DatabaseCirculationRepository
 from data.repository.connections_repository.database_connections_repository import DatabaseConnectionsRepository
 from data.repository.recommendations_repository.database_recommendations_repository import \
@@ -20,5 +20,5 @@ database_provider.connect(
 circulation_repository = DatabaseCirculationRepository()
 recommendations_repository = DatabaseRecommendationsRepository()
 connections_repository = DatabaseConnectionsRepository()
-book_repository = DummyBookRepository()
+book_repository = DatabaseBookRepository()
 user_repository = DummyUserRepository()

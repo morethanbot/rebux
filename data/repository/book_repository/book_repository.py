@@ -7,7 +7,3 @@ class BookRepository(ABC):
     @abstractmethod
     def get_book(self, book_id: int) -> Book:
         pass
-
-    @abstractmethod
-    def add_book(self, book: Book):
-        pass
