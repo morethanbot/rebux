@@ -11,7 +11,7 @@ def add_entry(user_id: str, book_id: str):
     circulation_repository.add_user_book(user=user, book=book)
 
     user_books = circulation_repository.get_user_books(user=user)
-    user_book_ids = list[str]
+    user_book_ids = List[str]
     for connected_book in user_books:
         user_book_ids.append(__object=connected_book.book_id)
         if connected_book.book_id != book.book_id:
