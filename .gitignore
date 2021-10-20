@@ -1,5 +1,3 @@
-*.csv
+.vscode
 .idea
-bin
-*.dSYM
-src/main
+updater/bin/*
