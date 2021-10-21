@@ -4,7 +4,6 @@ import json
 user_books = {}
 book_users = {}
 book_info = {}
-book_titles = {}
 
 
 def read_user_books(filename):
@@ -56,7 +55,6 @@ def get_user_recommendations(user_from_id):
                     if book_to_id not in book_weights:
                         book_weights[book_to_id] = 0
                     book_weights[book_to_id] += 1
-    #243784
     book_by_titles = {}
     for book_id in book_weights.keys():
         book = book_info[book_id]
@@ -69,7 +67,7 @@ def get_user_recommendations(user_from_id):
     }
     return json.dumps(response, indent=4, ensure_ascii=False)
 
-# 386000
+
 for i in range(0, 2):
     read_book_info(f'dataset/book_info_{i+1}.csv')
 for i in range(0, 3):
